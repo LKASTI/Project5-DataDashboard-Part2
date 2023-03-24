@@ -1,0 +1,48 @@
+*{
+  margin: unset;
+}
+
+@font-face {
+  font-family: "Star Wars";
+  src: url("./assets/fonts/Strjmono.ttf");
+}
+
+:root{
+  color: white;
+  /* background-image: url("./assets/space-stars-background.webp"); */
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+
+}
+
+h1{
+  font-family: "Star Wars";
+  text-align: center;
+  font-size: 70px;
+
+  color: transparent;
+  line-height: 60px;
+  letter-spacing: 7px;
+
+  -webkit-text-stroke: 1px gold;
+
+  margin-top: 20px;
+}
+
+.App{
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
