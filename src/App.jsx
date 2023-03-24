@@ -15,6 +15,7 @@ const options = {
 function App() {
   const [listResponse, setListResponse] = useState(null)
   const [listDisplay, setListDisplay] = useState(null)
+  const [searchValue, setSearchValue] = useState("")
 
   useEffect(() =>{
     setListResponse([
@@ -383,12 +384,36 @@ function App() {
     // })()
   }, [])
 
+  const handleSearch = (e) => {
+    e.preventDefault()
+    if(searchValue === "" || searchValue === " ")
+    {
+      setListDisplay(listResponse)
+    }
+    else
+    {
+      setListDisplay(listDisplay.filter((character) => character.name.includes(searchValue)))
+    }
+  }
+ 
   return (
     <div className="App">
       <h1>Star<br/>Wars<br/><br/>Characters</h1>
       <div className='content'>
         <div className='query-options'>
-          
+          <form className="search-container" onSubmit={handleSearch}>
+              <label className="">
+                  Search
+                  <input 
+                      className="" 
+                      type="text"
+                      placeholder='enter a name'
+                      value={searchValue} 
+                      onChange={(e) => {setSearchValue(e.target.value)}}
+                  />
+              </label>
+              <button type="submit">Submit</button>
+          </form>
         </div>
         <div className='data-summary'> 
           Summary
