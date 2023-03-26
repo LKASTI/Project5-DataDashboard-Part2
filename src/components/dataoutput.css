@@ -1,17 +1,48 @@
 table {
     text-align: center;
   
-    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+
+    font-size: 20px;
   
     border-spacing: 100px 10px;
 
-    background-color: rgba(255, 255, 255, 0.219);
-    border-radius: 20px;
+    background-color: rgba(126, 126, 126, 0.836);
+
+    border-radius: 50px;
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 thead {
-    font-size: 35px;
+    font-size: 30px;
 
     text-decoration: underline;
     text-underline-offset: 10px;
 }
+
+.data-output{
+    margin-bottom: 30px;
+
+    height: 60vh;
+
+    overflow-y:auto;
+
+}
+
+::-webkit-scrollbar {
+    /* border: 1px solid black; */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+    
+}
+::-webkit-scrollbar-thumb {
+    background-color: gold;
+
+    /* outline: 1px solid slategrey; */
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+  }

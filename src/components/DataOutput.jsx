@@ -15,6 +15,7 @@ const DataOutput = (props) => {
                 <th>Homeworld</th>
                 <th>Gender</th>
                 <th>Species</th>
+                <th>Mass(Kg)</th>
               </tr>
             </thead>
             <tbody>
@@ -25,6 +26,7 @@ const DataOutput = (props) => {
                     <td>{character.homeworld}</td>
                     <td>{character.gender}</td>
                     <td>{character.species}</td>
+                    <td>{character.mass}</td>
                   </tr>
                 )
               })}

@@ -15,7 +15,7 @@ const FilterBox = (props) => {
                 <optgroup label='Species'>
                     <option value="droid">droid</option>
                     <option value="human">human</option>
-                    <option value="other">other</option>
+                    <option value="alien">alien</option>
                 </optgroup>
             </select>
         </label>

@@ -9,8 +9,8 @@
 
 :root{
   color: white;
-  /* background-image: url("./assets/space-stars-background.webp"); */
-  background-color: black;
+  background-image: url("./assets/space-stars-background.webp");
+  /* background-color: black; */
   height: 100vh;
   width: 100vw;
 
@@ -45,4 +45,32 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.query-options{
+  display: flex;
+  align-items: center;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.data-summary{
+  text-align: center;
+
+  padding: 15px;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: bold;
+
+  background-color: rgba(126, 126, 126, 0.836);
+  border-radius: 35px;
+
+  margin-bottom: 20px;
+}
+
+.data-summary p{
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
