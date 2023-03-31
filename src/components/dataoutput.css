@@ -5,7 +5,7 @@ table {
 
     font-size: 20px;
   
-    border-spacing: 100px 10px;
+    border-spacing: 50px 10px;
 
     background-color: rgba(126, 126, 126, 0.836);
 
@@ -16,7 +16,7 @@ table {
 }
 
 thead {
-    font-size: 30px;
+    font-size: 20px;
 
     text-decoration: underline;
     text-underline-offset: 10px;
@@ -26,9 +26,13 @@ thead {
     margin-bottom: 30px;
 
     height: 60vh;
+    width: 50vw;
 
     overflow-y:auto;
 
+
+    margin-right: auto;
+    margin-left: 20px;
 }
 
 ::-webkit-scrollbar {
