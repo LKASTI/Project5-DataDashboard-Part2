@@ -26,8 +26,10 @@ function App() {
   
     const req = async () => {
       await axios.request(options).then(function (response) {
+        
         setListResponse(response.data)
         setListDisplay(response.data)
+
         setFilterCount(response.data.length)
         console.log(response.data)
       }).catch(function (error) {

@@ -19,7 +19,7 @@ const DataOutput = (props) => {
               </tr>
             </thead>
             <tbody>
-              {props.listDisplay != null && props.listDisplay.map((character, key) => {
+              {props.listDisplay?.map((character, key) => {
                 return(
                   <tr key={key}>
                     <td>{character.name}</td>
