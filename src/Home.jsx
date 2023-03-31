@@ -1,22 +1,15 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route, Link, BrowserRouter } from "react-router-dom"
 import './Home.css'
 import axios from 'axios'
 import DataOutput from './components/DataOutput';
 import SearchBox from './components/SearchBox';
 import FilterBox from './components/FilterBox';
+import DetailView from './components/DetailView';
 
-const options = {
-  method: 'GET',
-  url: 'https://star-wars-characters.p.rapidapi.com/46DYBV/star_wars_characters',
-  headers: {
-    'X-RapidAPI-Key': 'e3e0ae3a5bmshba832cb318db2aep12a3bcjsnc774d9252559',
-    'X-RapidAPI-Host': 'star-wars-characters.p.rapidapi.com'
-  }
-};
 
-function Home() {
-  const [listResponse, setListResponse] = useState(null)
+
+function Home({listResponse}) {
   const [listDisplay, setListDisplay] = useState(null)
   const [searchValue, setSearchValue] = useState("")
   const [filterValue, setFilterValue] = useState("none")
@@ -24,23 +17,12 @@ function Home() {
   const [averageMass, setAverageMass] = useState(0)
 
   useEffect(() =>{
-  
-    const req = async () => {
-      await axios.request(options).then(function (response) {
-        
-        setListResponse(response.data)
-        setListDisplay(response.data)
+    console.log(listResponse)
+    
+    setListDisplay(listResponse)
+    setFilterCount(listResponse?.length)
 
-        setFilterCount(response.data.length)
-        console.log(response.data)
-      }).catch(function (error) {
-        console.error(error);
-      })
-    }
-
-    req()
-
-  }, [])
+  }, [listResponse])
 
   useEffect(() => {
     handleAverageMass()
@@ -154,7 +136,7 @@ function Home() {
           <p>Average Mass of Current Selection: {averageMass}</p>
           <p>Percentage of Characters for filter {"("+filterValue+")"}: {listResponse? Math.floor((filterCount/listResponse.length)*100) +"%" : ""}</p>
         </div>
-        <DataOutput className="data" listDisplay={listDisplay}/>
+        <DataOutput listDisplay={listDisplay}/>
       </div>
     </div>
   )

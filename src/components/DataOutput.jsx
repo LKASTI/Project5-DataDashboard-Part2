@@ -1,5 +1,6 @@
 import react from 'react'
 import { useState } from 'react'
+import {Link} from "react-router-dom"
 import "./dataoutput.css"
 
 
@@ -22,11 +23,12 @@ const DataOutput = (props) => {
               {props.listDisplay?.map((character, key) => {
                 return(
                   <tr key={key}>
-                    <td>{character.name}</td>
-                    <td>{character.homeworld}</td>
-                    <td>{character.gender}</td>
-                    <td>{character.species}</td>
-                    <td>{character.mass}</td>
+                      <td>{character.name}</td>
+                      <td>{character.homeworld}</td>
+                      <td>{character.gender}</td>
+                      <td>{character.species}</td>
+                      <td>{character.mass}</td>
+                      <td><Link to={`/detail/${character.id}`}>DETAILED</Link></td>
                   </tr>
                 )
               })}
