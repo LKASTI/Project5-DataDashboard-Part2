@@ -1,11 +1,10 @@
 import react from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {Link} from "react-router-dom"
 import "./dataoutput.css"
 
 
 const DataOutput = (props) => {
-
 
     return(
         <div className='data-output'>
@@ -28,7 +27,7 @@ const DataOutput = (props) => {
                       <td>{character.gender}</td>
                       <td>{character.species}</td>
                       <td>{character.mass}</td>
-                      <td><Link to={`/detail/${character.id}`}>DETAILED</Link></td>
+                      <td><Link to={`/detail/${character.id}`}>Details</Link></td>
                   </tr>
                 )
               })}

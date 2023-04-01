@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom"
 import './Home.css'
-import axios from 'axios'
 import DataOutput from './components/DataOutput';
 import SearchBox from './components/SearchBox';
 import FilterBox from './components/FilterBox';
-import DetailView from './components/DetailView';
+import DataGraph from './components/DataGraph';
 
 
 
@@ -15,6 +13,12 @@ function Home({listResponse}) {
   const [filterValue, setFilterValue] = useState("none")
   const [filterCount, setFilterCount] = useState(0)
   const [averageMass, setAverageMass] = useState(0)
+  const [homeworldList, setHomeworldList] = useState(null)
+
+
+  useEffect(() => {
+    console.log(homeworldList)
+  }, [homeworldList])
 
   useEffect(() =>{
     console.log(listResponse)
@@ -22,10 +26,13 @@ function Home({listResponse}) {
     setListDisplay(listResponse)
     setFilterCount(listResponse?.length)
 
+
   }, [listResponse])
 
   useEffect(() => {
     handleAverageMass()
+    populateHomeworldList()
+
   },[listDisplay])
 
   const handleSearch = (e) => {
@@ -122,6 +129,34 @@ function Home({listResponse}) {
     setAverageMass(Math.ceil(sum/len))
   } 
 
+  const populateHomeworldList = () => {
+    if(listDisplay == null)
+      return
+
+    let temp = [{homeworld: `${listDisplay[0].homeworld}`, count: 1}]
+
+    for(const c of listDisplay)
+    {
+      if(temp.filter((o) => o.homeworld === c.homeworld).length != 0)
+      {
+        temp.map((o) => {
+          if(o.homeworld === c.homeworld)
+          {
+            o.count += 1
+          }
+        })
+      }
+      else
+      {
+        temp.push({homeworld: `${c.homeworld}`, count: 1})
+      }
+    }
+
+    temp.pop()
+
+    setHomeworldList(temp)
+
+  }
 
   return (
     <div className="Home">
@@ -136,7 +171,10 @@ function Home({listResponse}) {
           <p>Average Mass of Current Selection: {averageMass}</p>
           <p>Percentage of Characters for filter {"("+filterValue+")"}: {listResponse? Math.floor((filterCount/listResponse.length)*100) +"%" : ""}</p>
         </div>
-        <DataOutput listDisplay={listDisplay}/>
+        <div className='data'>
+          <DataOutput listDisplay={listDisplay}/>
+          <DataGraph homeworldList={homeworldList}/>
+        </div>
       </div>
     </div>
   )

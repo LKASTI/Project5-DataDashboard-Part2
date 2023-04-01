@@ -5,7 +5,7 @@ table {
 
     font-size: 20px;
   
-    border-spacing: 30px 10px;
+    border-spacing: 20px 15px;
 
     background-color: rgba(126, 126, 126, 0.836);
 
@@ -13,6 +13,22 @@ table {
 
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+}
+
+td >*{
+    color: gold;
+    text-decoration: unset;
+    
+
+    padding: 5px;
+    border-radius: 10px;
+    border: solid rgba(126, 126, 126, 0.836) 1px;
+}
+
+td >*:hover{
+    border: solid gold 1px;
+    background-color: rgba(255, 217, 0, 0.692);
+    color: black;
 }
 
 thead {

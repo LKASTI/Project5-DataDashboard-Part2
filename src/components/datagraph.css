@@ -1,0 +1,27 @@
+.data-graph{
+    margin-bottom: 30px;
+  
+    height: 60vh;
+    width: 35vw;
+  
+    overflow-y:auto;
+  
+    margin-left: 100px;
+  
+    background-color: rgba(126, 126, 126, 0.836);
+    border-radius: 35px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    text-align: center;
+    
+      font-family: 'Courier New', Courier, monospace;
+  
+      font-size: 20px;
+  }
+  
