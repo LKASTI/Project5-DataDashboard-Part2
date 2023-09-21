@@ -6,10 +6,10 @@ import axios from 'axios'
 
 const options = {
     method: 'GET',
-    url: 'https://star-wars-characters.p.rapidapi.com/46DYBV/star_wars_characters',
+    url: '',
     headers: {
-      'X-RapidAPI-Key': 'e3e0ae3a5bmshba832cb318db2aep12a3bcjsnc774d9252559',
-      'X-RapidAPI-Host': 'star-wars-characters.p.rapidapi.com'
+      'X-RapidAPI-Key': '',
+      'X-RapidAPI-Host': ''
     }
   };
 
